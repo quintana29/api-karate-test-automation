@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/pets\/pets[1:8]","start":1773846561859,"end":1773846562647,"title":"examples\/pets\/pets[1:8] 10:09:21.859-10:09:22.647 Create a new dog"},{"id":2,"group":1,"content":"examples\/pets\/pets[2:32]","start":1773846562664,"end":1773846562723,"title":"examples\/pets\/pets[2:32] 10:09:22.664-10:09:22.723 Search a new dog"},{"id":3,"group":1,"content":"examples\/pets\/pets[3:42]","start":1773846562732,"end":1773846562794,"title":"examples\/pets\/pets[3:42] 10:09:22.732-10:09:22.794 Update a pet"},{"id":4,"group":1,"content":"examples\/pets\/pets[4:55]","start":1773846562805,"end":1773846562865,"title":"examples\/pets\/pets[4:55] 10:09:22.805-10:09:22.865 Update partially a pet"},{"id":5,"group":1,"content":"examples\/pets\/pets[5:66]","start":1773846562880,"end":1773846562935,"title":"examples\/pets\/pets[5:66] 10:09:22.880-10:09:22.935 Delete a pet"},{"id":6,"group":1,"content":"examples\/pets\/pets[6:75]","start":1773846562945,"end":1773846562982,"title":"examples\/pets\/pets[6:75] 10:09:22.945-10:09:22.982 Basic authentication","className":"failed"},{"id":7,"group":1,"content":"examples\/pets\/pets[7:85]","start":1773846563012,"end":1773846563027,"title":"examples\/pets\/pets[7:85] 10:09:23.012-10:09:23.027 Basic authentication failed","className":"failed"},{"id":8,"group":1,"content":"examples\/pets\/pets[8:95]","start":1773846563039,"end":1773846563059,"title":"examples\/pets\/pets[8:95] 10:09:23.039-10:09:23.059 Bearer authentication","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
