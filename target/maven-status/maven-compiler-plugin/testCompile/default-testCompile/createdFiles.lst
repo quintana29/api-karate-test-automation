@@ -1,2 +1,8 @@
+examples\posts\PostRunner.class
+examples\pets\PetsRunner.class
 examples\authentication\AuthenticationRunner.class
 examples\ExamplesTest.class
+examples\pets\DeletePetsRunner.class
+examples\pets\UpdatePetsRunner.class
+examples\pets\SearcPetsRunner.class
+examples\pets\CreateNewPetRunner.class

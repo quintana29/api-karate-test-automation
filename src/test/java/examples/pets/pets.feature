@@ -1,6 +1,15 @@
+Feature: Create new pets
+
+  Background:
+    * url baseUrl
+    * path 'pets'
 
 
-
+  Scenario: Create a new dog
+    Given request {"name": "Bingo3","type": "Perro","age": 1}
+    When method post
+    Then status 201
+    And match $.message contains "Pet created"
 
   Scenario: Update a pet
     Given request { "name": "Bingo3", "type": "Perro", "age": 1 }
